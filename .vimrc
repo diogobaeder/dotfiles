@@ -71,16 +71,18 @@ set mouse-=a
 set number
 set foldmethod=indent
 set foldlevel=99
+set encoding=utf-8
 nnoremap <leader>s :ToggleWorkspace<CR>
 nnoremap <space> za
 set splitbelow
 set splitright
-let g:pymode_rope = 0
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Python
+let g:pymode_rope = 0
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
