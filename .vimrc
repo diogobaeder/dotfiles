@@ -58,13 +58,24 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
-let mapleader = "-"
+execute pathogen#infect()
+call vundle#begin()
+
+Plugin 'jelera/vim-javascript-syntax'
+
+let mapleader = ","
 autocmd! BufWritePost .vimrc source %
 set bs=2
 set clipboard=unnamed
 set mouse-=a
 set number
+set foldmethod=indent
+set foldlevel=99
 nnoremap <leader>s :ToggleWorkspace<CR>
+nnoremap <space> za
+set splitbelow
+set splitright
+let g:pymode_rope = 0
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
