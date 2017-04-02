@@ -58,10 +58,17 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
+let mapleader = "-"
 autocmd! BufWritePost .vimrc source %
 set bs=2
 set clipboard=unnamed
 set mouse-=a
+set number
+nnoremap <leader>s :ToggleWorkspace<CR>
+
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
