@@ -72,10 +72,15 @@ set number
 set foldmethod=indent
 set foldlevel=99
 set encoding=utf-8
-nnoremap <leader>s :ToggleWorkspace<CR>
 nnoremap <space> za
 set splitbelow
 set splitright
+
+" Plugins
+let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+nnoremap <leader>s :ToggleWorkspace<CR>
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
