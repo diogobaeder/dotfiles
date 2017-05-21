@@ -75,9 +75,12 @@ set encoding=utf-8
 nnoremap <space> za
 set splitbelow
 set splitright
+set wildmode=longest,list,full
+set wildmenu
 
 " Plugins
 let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_server_python_interpreter = '/usr/bin/python2'
 nnoremap <leader>s :ToggleWorkspace<CR>
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
