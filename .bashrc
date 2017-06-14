@@ -45,3 +45,5 @@ export MONGO_HOME=$HOME/Downloads/mongodb-linux-x86_64-3.0.6/bin/
 
 . paver_autocomplete
 . fabric_autocomplete
+. kubectl-completion
+
