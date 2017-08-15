@@ -50,3 +50,9 @@
 
 [core]
 	editor = vim
+
+[includeIf "gitdir:~/yougov/"]
+	path = ~/.gitconfig-yougov
+
+[url "git@gitlab.yougov.net:"]
+	insteadOf = gitlab://
