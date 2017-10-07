@@ -33,6 +33,7 @@ if [ -f /usr/bin/virtualenvwrapper.sh ]; then
 	source /usr/bin/virtualenvwrapper.sh
 fi
 
+export EDITOR=vim
 export GOROOT=/usr/lib/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
