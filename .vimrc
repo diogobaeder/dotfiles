@@ -62,6 +62,8 @@ execute pathogen#infect()
 call vundle#begin()
 
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'rust-lang/rust.vim'
+Plugin 'cespare/vim-toml'
 
 let mapleader = ","
 autocmd! BufWritePost .vimrc source %
@@ -84,6 +86,7 @@ let g:ycm_server_python_interpreter = '/usr/bin/python2'
 nnoremap <leader>s :ToggleWorkspace<CR>
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:rustfmt_autosave = 1
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
@@ -96,3 +99,13 @@ python powerline_setup()
 python del powerline_setup
 set laststatus=2
 set t_Co=256
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
