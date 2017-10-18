@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export HISTCONTROL=ignoredups
+export HISTCONTROL=ignoreboth
 
 #export PYTHONPATH=/usr/lib/python3.4/site-packages
 export PYTHONHASHSEED=random
