@@ -64,6 +64,7 @@ call vundle#begin()
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
+Plugin 'timonv/vim-cargo'
 
 let mapleader = ","
 autocmd! BufWritePost .vimrc source %
