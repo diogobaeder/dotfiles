@@ -63,6 +63,7 @@ call vundle#begin()
 
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer'
 Plugin 'cespare/vim-toml'
 Plugin 'timonv/vim-cargo'
 
@@ -80,6 +81,7 @@ set splitbelow
 set splitright
 set wildmode=longest,list,full
 set wildmenu
+set hidden
 
 " Plugins
 let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
@@ -88,6 +90,7 @@ nnoremap <leader>s :ToggleWorkspace<CR>
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:rustfmt_autosave = 1
+let g:racer_experimental_completer = 1
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>

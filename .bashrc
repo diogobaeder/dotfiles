@@ -37,6 +37,7 @@ export EDITOR=vim
 export GOROOT=/usr/lib/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export SKIP_JVM_TESTS=1
 
 export VELOCIRAPTOR_URL=https://deploy.yougov.net/
 export VELOCIRAPTOR_AUTH_DOMAIN=deploy.yougov.net
@@ -54,3 +55,14 @@ mirror-repo() {
     git -C $tmpdir push --mirror gitlab://${2:-$1}.git
     rm -Rf $tmpdir
 }
+
+kns () {
+    if [[ $# -eq 0 ]]
+    then
+        kubectl config get-contexts
+    else
+        kubectl config set-context $(kubectl config current-context) --namespace $@
+    fi
+}
+alias kc='kubectl config get-contexts'
+alias ksc='kubectl config use-context'
