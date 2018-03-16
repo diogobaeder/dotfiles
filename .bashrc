@@ -36,13 +36,17 @@ fi
 export EDITOR=vim
 export GOROOT=/usr/lib/go
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export CARGOPATH=$HOME/.cargo
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$CARGOPATH/bin
 export SKIP_JVM_TESTS=1
+export KUBE_EDITOR=~/bin/kube-secret-editor.py
 
 export VELOCIRAPTOR_URL=https://deploy.yougov.net/
 export VELOCIRAPTOR_AUTH_DOMAIN=deploy.yougov.net
 
-export MONGO_HOME=$HOME/Downloads/mongodb-linux-x86_64-3.0.6/bin/
+#export MONGO_HOME=$HOME/Downloads/mongodb-linux-x86_64-3.0.6/bin/
+export MONGO_HOME=$HOME/Downloads/mongodb-linux-x86_64-3.4.10/bin/
+#export MONGO_HOME=$HOME/Downloads/mongodb-linux-x86_64-3.6.1/bin/
 #export MONGO_DIR=/run/diogobaeder/mongo_bix2ui
 
 . paver_autocomplete
@@ -66,3 +70,4 @@ kns () {
 }
 alias kc='kubectl config get-contexts'
 alias ksc='kubectl config use-context'
+alias kedit-secret="kubectl edit secret"
