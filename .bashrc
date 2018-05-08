@@ -20,7 +20,7 @@ if [ -f $SITE_PACKAGES/powerline/bindings/bash/powerline.sh ]; then
 fi
 
 
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.config/composer/vendor/bin:$HOME/bin:$PATH
 if [ -f /usr/bin/ruby ] && [ -d $(ruby -e 'print Gem.user_dir') ]; then
 	export PATH=$(ruby -e 'print Gem.user_dir')/bin:$PATH
 fi
