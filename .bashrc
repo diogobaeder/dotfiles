@@ -7,16 +7,15 @@
 
 export HISTCONTROL=ignoreboth
 
-#export PYTHONPATH=/usr/lib/python3.4/site-packages
 export PYTHONHASHSEED=random
 export SITE_PACKAGES=`python -c 'import site; print(site.getsitepackages()[0])'`
+#export PYTHONPATH=$SITE_PACKAGES
 
 alias ls='ls --color=auto'
-alias yolo='yaourt -Syyua --force --noconfirm'
-PS1='[\u@\h \W]\$ '
+#PS1='[\u@\h \W]\$ '
 
-if [ -f $SITE_PACKAGES/powerline/bindings/bash/powerline.sh ]; then
-	. $SITE_PACKAGES/powerline/bindings/bash/powerline.sh
+if [ -f ~/.bash_prompt.py ]; then
+	export PS1="\$(python ~/.bash_prompt.py)"
 fi
 
 
@@ -28,6 +27,7 @@ fi
 
 # Virtualenvwrapper
 export WORKON_HOME=~/Envs
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 mkdir -p $WORKON_HOME
 if [ -f /usr/bin/virtualenvwrapper.sh ]; then
 	source /usr/bin/virtualenvwrapper.sh
