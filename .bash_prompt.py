@@ -11,7 +11,6 @@ from os.path import basename
 
 DATETIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 DEVNULL = open(devnull, 'w')
-environ['VIRTUAL_ENV_DISABLE_PROMPT'] = '1'
 
 
 class Colors(object):
