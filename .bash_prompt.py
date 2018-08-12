@@ -31,7 +31,6 @@ def ignore_errors(f):
         try:
             return f(*args, **kwargs)
         except:
-            raise
             return ''
 
     return decorator
