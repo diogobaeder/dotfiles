@@ -5,21 +5,21 @@ import socket
 import subprocess
 from datetime import datetime
 from functools import wraps
-from os import getenv, getcwd, devnull, environ
+from os import getenv, getcwd, geteuid, devnull, environ
 from os.path import basename
-
 
 DATETIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 DEVNULL = open(devnull, 'w')
 
 
 class Colors(object):
+    DEFAULT = 39
     BLACK = 30
     RED = 31
     GREEN = 32
-    BROWN = 33
+    YELLOW = 33
     BLUE = 34
-    PURPLE = 35
+    MAGENTA = 35
     CYAN = 36
     GRAY = 37
 
@@ -41,24 +41,27 @@ class Git(object):
 
     @classmethod
     @ignore_errors
-    def status(cls):
+    def status(cls, auto_color=True, *args, **kwargs):
         status = subprocess.check_output(
             ['git', 'status'], stderr=DEVNULL).decode('utf-8')
         color, dirty = cls._current_color(status)
         branch = cls._current_branch(status)
-        text = '({}{})'.format(branch, ' *' if dirty else '')
+        text = '{}{}'.format(branch, ' *' if dirty else '')
 
-        return colorize(text, color)
+        if not auto_color:
+            color = Colors.DEFAULT
+
+        return stylize(text, color, *args, **kwargs)
 
     @classmethod
     def _current_color(cls, status):
         if 'working tree clean' not in status:
             return Colors.RED, True
         if 'Your branch is ahead of' in status:
-            return Colors.BROWN, False
+            return Colors.YELLOW, False
         if 'nothing to commit' in status:
             return Colors.GREEN, False
-        return Colors.PURPLE, False
+        return Colors.MAGENTA, False
 
     @classmethod
     def _current_branch(cls, status):
@@ -80,20 +83,19 @@ class Kube(object):
     def status(cls):
         context = cls._current_context()
         namespace = cls._current_namespace()
-        text = '{}@{}'.format(namespace, context)
-        return colorize(text, Colors.PURPLE)
+        return '{}@{}'.format(namespace, context)
 
     @classmethod
     def _current_context(cls):
         return subprocess.check_output([
             'kubectl', 'config', 'current-context'
-        ]).decode('utf-8').strip()
+        ], stderr=DEVNULL).decode('utf-8').strip()
 
     @classmethod
     def _current_namespace(cls):
         contexts = subprocess.check_output([
             'kubectl', 'config', 'get-contexts'
-        ]).decode('utf-8').strip().split('\n')[1:]
+        ], stderr=DEVNULL).decode('utf-8').strip().split('\n')[1:]
 
         for context_line in contexts:
             parts = cls.SPACES_PATTERN.split(context_line.strip())
@@ -107,12 +109,6 @@ class VirtualEnv(object):
     @classmethod
     @ignore_errors
     def status(cls):
-        current = cls._current_env()
-        if current:
-            return colorize(current, Colors.BLUE, light=True)
-
-    @classmethod
-    def _current_env(cls):
         current = getenv('VIRTUAL_ENV')
         if current:
             return basename(current)
@@ -121,13 +117,11 @@ class VirtualEnv(object):
 class Prompt(object):
     @classmethod
     def now(cls):
-        text = datetime.now().strftime(DATETIME_FORMAT)
-        return colorize(text, Colors.GREEN, light=True)
+        return datetime.now().strftime(DATETIME_FORMAT)
 
     @classmethod
     def who(cls):
-        text = '{}@{}:'.format(getenv('USER'), socket.gethostname())
-        return colorize(text, Colors.BROWN)
+        return '{}@{}'.format(getenv('USER'), socket.gethostname())
 
     @classmethod
     def directory(cls):
@@ -135,41 +129,56 @@ class Prompt(object):
         home = getenv('HOME')
         if home in wd:
             wd = wd.replace(home, '~')
-        text = '{}:'.format(wd)
-        return colorize(text, Colors.CYAN)
+        return '{}'.format(wd)
 
     @classmethod
-    def git(cls):
-        return Git.status()
-
-    @classmethod
-    def kube(cls):
-        return Kube.status()
-
-    @classmethod
-    def virtualenv(cls):
-        return VirtualEnv.status()
+    def prompt_end(cls):
+        uid = geteuid()
+        if uid == 0:
+            return '#'
+        return '$'
 
 
-def colorize(text, color, light=False):
-    light = int(light)
-    return '\033[{light};{color}m{text}\033[0m'.format(
+def stylize(text, color, light=False, bold=False, dim=False, underline=False,
+            blink=False, reverse=False, hidden=False):
+    if not text:
+        return
+
+    if light:
+        color += 60
+    styles = [color]
+    if bold:
+        styles.append(1)
+    if dim:
+        styles.append(2)
+    if underline:
+        styles.append(4)
+    if blink:
+        styles.append(5)
+    if reverse:
+        styles.append(7)
+    if hidden:
+        styles.append(8)
+
+    styles = ';'.join(str(style) for style in styles)
+    return '\033[{styles}m{text}\033[0m'.format(
         **locals()
     )
 
 
-def create_prompt(parts):
-    return ' '.join(p for p in parts if p) + ' '
+def create_prompt(parts, separator=' '):
+    return separator.join(p for p in parts if p) + ' '
 
 
 def main():
     parts = [
-        Prompt.now(),
-        Prompt.git(),
-        Prompt.kube(),
-        Prompt.virtualenv(),
-        Prompt.who(),
-        Prompt.directory(),
+        stylize(Prompt.now(), Colors.GREEN, reverse=True),
+        Git.status(auto_color=True, bold=True),
+        stylize(Kube.status(), Colors.MAGENTA, bold=True),
+        stylize(VirtualEnv.status(), Colors.BLUE, light=True, bold=True),
+        stylize(Prompt.who(), Colors.YELLOW, dim=True),
+        stylize(Prompt.directory(), Colors.CYAN),
+        stylize(Prompt.prompt_end(), Colors.GRAY, light=True)
     ]
 
     print(create_prompt(parts))
