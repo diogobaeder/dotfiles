@@ -15,7 +15,7 @@ alias ls='ls --color=auto'
 #PS1='[\u@\h \W]\$ '
 
 if [ -f ~/.bash_prompt.py ]; then
-	export PS1="\$(python ~/.bash_prompt.py)"
+	PROMPT_COMMAND='PS1="$(python ~/.bash_prompt.py)"'
 fi
 
 

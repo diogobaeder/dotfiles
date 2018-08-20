@@ -161,8 +161,8 @@ def stylize(text, color, light=False, bold=False, dim=False, underline=False,
         styles.append(8)
 
     styles = ';'.join(str(style) for style in styles)
-    esc_start = ''
-    esc_end = ''
+    esc_start = '\['
+    esc_end = '\]'
     template = (
         '{esc_start}'
         '\033[{styles}m'
