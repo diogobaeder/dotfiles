@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Session version="3002" id-counter="22191" name-counter="1" event-counter="57487" vca-counter="1">
+<Session version="3002" id-counter="25173" name-counter="1" event-counter="57526" vca-counter="1">
   <ProgramVersion created-with="Ardour 5.12" modified-with="Ardour 5.12"/>
   <MIDIPorts>
     <Port name="MIDI Clock in" direction="input"/>
@@ -25,7 +25,7 @@
     <Option name="auto-input" value="1"/>
     <Option name="punch-in" value="0"/>
     <Option name="punch-out" value="0"/>
-    <Option name="count-in" value="0"/>
+    <Option name="count-in" value="1"/>
     <Option name="session-monitoring" value=""/>
     <Option name="layered-record-mode" value="0"/>
     <Option name="subframes-per-frame" value="100"/>
@@ -68,7 +68,7 @@
   <Sources/>
   <Regions/>
   <Locations>
-    <Location id="22193" name="session" start="0" end="0" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
+    <Location id="25175" name="session" start="0" end="0" flags="IsSessionRange" locked="0" position-lock-style="AudioTime"/>
   </Locations>
   <Bundles/>
   <VCAManager/>
@@ -347,7 +347,9 @@
       <Controllable name="solo-iso" id="992" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
       <Controllable name="solo-safe" id="994" flags="Toggle" value="0" solo-safe="0"/>
       <IO name="Serginho" id="1006" direction="Input" default-type="audio" user-latency="0">
-        <Port type="audio" name="Serginho/audio_in 1"/>
+        <Port type="audio" name="Serginho/audio_in 1">
+          <Connection other="system:capture_3"/>
+        </Port>
       </IO>
       <IO name="Serginho" id="1007" direction="Output" default-type="audio" user-latency="0">
         <Port type="audio" name="Serginho/audio_out 1">
@@ -410,7 +412,9 @@
       <Controllable name="solo-iso" id="1053" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
       <Controllable name="solo-safe" id="1055" flags="Toggle" value="0" solo-safe="0"/>
       <IO name="Diogo" id="1067" direction="Input" default-type="audio" user-latency="0">
-        <Port type="audio" name="Diogo/audio_in 1"/>
+        <Port type="audio" name="Diogo/audio_in 1">
+          <Connection other="system:capture_4"/>
+        </Port>
       </IO>
       <IO name="Diogo" id="1068" direction="Output" default-type="audio" user-latency="0">
         <Port type="audio" name="Diogo/audio_out 1">
@@ -536,7 +540,9 @@
       <Controllable name="solo-iso" id="1175" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
       <Controllable name="solo-safe" id="1177" flags="Toggle" value="0" solo-safe="0"/>
       <IO name="Guitar" id="1189" direction="Input" default-type="audio" user-latency="0">
-        <Port type="audio" name="Guitar/audio_in 1"/>
+        <Port type="audio" name="Guitar/audio_in 1">
+          <Connection other="system:capture_6"/>
+        </Port>
       </IO>
       <IO name="Guitar" id="1190" direction="Output" default-type="audio" user-latency="0">
         <Port type="audio" name="Guitar/audio_out 1">
@@ -651,7 +657,9 @@
       <Controllable name="solo-iso" id="1236" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
       <Controllable name="solo-safe" id="1238" flags="Toggle" value="0" solo-safe="0"/>
       <IO name="Keyboard" id="1250" direction="Input" default-type="audio" user-latency="0">
-        <Port type="audio" name="Keyboard/audio_in 1"/>
+        <Port type="audio" name="Keyboard/audio_in 1">
+          <Connection other="system:capture_7"/>
+        </Port>
       </IO>
       <IO name="Keyboard" id="1251" direction="Output" default-type="audio" user-latency="0">
         <Port type="audio" name="Keyboard/audio_out 1">
@@ -714,7 +722,9 @@
       <Controllable name="solo-iso" id="1297" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
       <Controllable name="solo-safe" id="1299" flags="Toggle" value="0" solo-safe="0"/>
       <IO name="Bass" id="1311" direction="Input" default-type="audio" user-latency="0">
-        <Port type="audio" name="Bass/audio_in 1"/>
+        <Port type="audio" name="Bass/audio_in 1">
+          <Connection other="system:capture_8"/>
+        </Port>
       </IO>
       <IO name="Bass" id="1312" direction="Output" default-type="audio" user-latency="0">
         <Port type="audio" name="Bass/audio_out 1">
@@ -777,7 +787,9 @@
       <Controllable name="solo-iso" id="1358" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
       <Controllable name="solo-safe" id="1360" flags="Toggle" value="0" solo-safe="0"/>
       <IO name="Kick" id="1372" direction="Input" default-type="audio" user-latency="0">
-        <Port type="audio" name="Kick/audio_in 1"/>
+        <Port type="audio" name="Kick/audio_in 1">
+          <Connection other="system:capture_9"/>
+        </Port>
       </IO>
       <IO name="Kick" id="1373" direction="Output" default-type="audio" user-latency="0">
         <Port type="audio" name="Kick/audio_out 1">
@@ -840,7 +852,9 @@
       <Controllable name="solo-iso" id="1419" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
       <Controllable name="solo-safe" id="1421" flags="Toggle" value="0" solo-safe="0"/>
       <IO name="Over 1" id="1433" direction="Input" default-type="audio" user-latency="0">
-        <Port type="audio" name="Over 1/audio_in 1"/>
+        <Port type="audio" name="Over 1/audio_in 1">
+          <Connection other="system:capture_10"/>
+        </Port>
       </IO>
       <IO name="Over 1" id="1434" direction="Output" default-type="audio" user-latency="0">
         <Port type="audio" name="Over 1/audio_out 1">
@@ -897,13 +911,15 @@
       <Controllable name="rec-enable" id="1441" flags="Toggle,RealTime" value="1"/>
       <Diskstream flags="Recordable" playlist="Over 1" name="Over 1" id="1446" speed="1" capture-alignment="Automatic" record-safe="0" channels="1"/>
     </Route>
-    <Route id="1470" name="Over 2" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterPostFader" meter-type="MeterPeak" saved-meter-point="MeterPostFader" mode="Normal">
+    <Route id="1470" name="Over 2" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterInput" meter-type="MeterPeak" saved-meter-point="MeterPostFader" mode="Normal">
       <PresentationInfo order="11" flags="AudioTrack,OrderSet" color="769648383"/>
       <Controllable name="solo" id="1478" flags="Toggle,RealTime" value="0" self-solo="0" soloed-by-upstream="0" soloed-by-downstream="0"/>
       <Controllable name="solo-iso" id="1484" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
       <Controllable name="solo-safe" id="1486" flags="Toggle" value="0" solo-safe="0"/>
       <IO name="Over 2" id="1498" direction="Input" default-type="audio" user-latency="0">
-        <Port type="audio" name="Over 2/audio_in 1"/>
+        <Port type="audio" name="Over 2/audio_in 1">
+          <Connection other="system:capture_12"/>
+        </Port>
       </IO>
       <IO name="Over 2" id="1499" direction="Output" default-type="audio" user-latency="0">
         <Port type="audio" name="Over 2/audio_out 1">
@@ -933,10 +949,10 @@
       <Processor id="1501" name="Amp" active="1" user-latency="0" type="trim">
         <Controllable name="trimcontrol" id="1476" flags="GainLike" value="1"/>
       </Processor>
+      <Processor id="1502" name="meter-Over 2" active="1" user-latency="0" type="meter"/>
       <Processor id="1500" name="Amp" active="1" user-latency="0" type="amp">
         <Controllable name="gaincontrol" id="1474" flags="GainLike" value="1"/>
       </Processor>
-      <Processor id="1502" name="meter-Over 2" active="1" user-latency="0" type="meter"/>
       <Processor id="1503" name="Over 2" active="1" user-latency="0" own-input="1" own-output="0" output="Over 2" type="main-outs" role="Main">
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
         <Pannable>
@@ -957,16 +973,18 @@
       <Slavable/>
       <Controllable name="monitor" id="1510" flags="RealTime" value="0" monitoring=""/>
       <Controllable name="rec-safe" id="1508" flags="Toggle,RealTime" value="0"/>
-      <Controllable name="rec-enable" id="1506" flags="Toggle,RealTime" value="0"/>
+      <Controllable name="rec-enable" id="1506" flags="Toggle,RealTime" value="1"/>
       <Diskstream flags="Recordable" playlist="Over 2.1" name="Over 2" id="1511" speed="1" capture-alignment="Automatic" record-safe="0" channels="1"/>
     </Route>
-    <Route id="1531" name="Snare" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterPostFader" meter-type="MeterPeak" saved-meter-point="MeterPostFader" mode="Normal">
+    <Route id="1531" name="Snare" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterInput" meter-type="MeterPeak" saved-meter-point="MeterPostFader" mode="Normal">
       <PresentationInfo order="12" flags="AudioTrack,OrderSet" color="769648383"/>
       <Controllable name="solo" id="1539" flags="Toggle,RealTime" value="0" self-solo="0" soloed-by-upstream="0" soloed-by-downstream="0"/>
       <Controllable name="solo-iso" id="1545" flags="Toggle,RealTime" value="0" solo-isolated="0"/>
       <Controllable name="solo-safe" id="1547" flags="Toggle" value="0" solo-safe="0"/>
       <IO name="Snare" id="1559" direction="Input" default-type="audio" user-latency="0">
-        <Port type="audio" name="Snare/audio_in 1"/>
+        <Port type="audio" name="Snare/audio_in 1">
+          <Connection other="system:capture_12"/>
+        </Port>
       </IO>
       <IO name="Snare" id="1560" direction="Output" default-type="audio" user-latency="0">
         <Port type="audio" name="Snare/audio_out 1">
@@ -996,10 +1014,10 @@
       <Processor id="1562" name="Amp" active="1" user-latency="0" type="trim">
         <Controllable name="trimcontrol" id="1537" flags="GainLike" value="1"/>
       </Processor>
+      <Processor id="1563" name="meter-Snare" active="1" user-latency="0" type="meter"/>
       <Processor id="1561" name="Amp" active="1" user-latency="0" type="amp">
         <Controllable name="gaincontrol" id="1535" flags="GainLike" value="1"/>
       </Processor>
-      <Processor id="1563" name="meter-Snare" active="1" user-latency="0" type="meter"/>
       <Processor id="1564" name="Snare" active="1" user-latency="0" own-input="1" own-output="0" output="Snare" type="main-outs" role="Main">
         <PannerShell bypassed="0" user-panner="" linked-to-route="1"/>
         <Pannable>
@@ -1020,7 +1038,7 @@
       <Slavable/>
       <Controllable name="monitor" id="1571" flags="RealTime" value="0" monitoring=""/>
       <Controllable name="rec-safe" id="1569" flags="Toggle,RealTime" value="0"/>
-      <Controllable name="rec-enable" id="1567" flags="Toggle,RealTime" value="0"/>
+      <Controllable name="rec-enable" id="1567" flags="Toggle,RealTime" value="1"/>
       <Diskstream flags="Recordable" playlist="Snare.1" name="Snare" id="1572" speed="1" capture-alignment="Automatic" record-safe="0" channels="1"/>
     </Route>
     <Route id="1592" name="Tom 1" default-type="audio" strict-io="1" active="1" denormal-protection="0" meter-point="MeterPostFader" meter-type="MeterPeak" saved-meter-point="MeterPostFader" mode="Normal">
@@ -1266,13 +1284,13 @@
     <Meter pulse="0" frame="0" movable="0" lock-style="AudioTime" bbt="1|1|0" beat="0" note-type="4" divisions-per-bar="4"/>
   </TempoMap>
   <ControlProtocols>
-    <Protocol name="PreSonus FaderPort8" active="0"/>
-    <Protocol name="PreSonus FaderPort" active="0"/>
     <Protocol name="Open Sound Control (OSC)" active="0"/>
     <Protocol name="Generic MIDI" active="0"/>
-    <Protocol name="Steinberg CC121" active="0"/>
-    <Protocol name="Ableton Push 2" active="0"/>
+    <Protocol name="PreSonus FaderPort" active="0"/>
     <Protocol name="Mackie" active="0"/>
+    <Protocol name="PreSonus FaderPort8" active="0"/>
+    <Protocol name="Ableton Push 2" active="0"/>
+    <Protocol name="Steinberg CC121" active="0"/>
   </ControlProtocols>
   <Extra>
     <ExportRevision revision="1"/>
@@ -1301,21 +1319,21 @@
       </ExportFilename>
     </ExportProfile>
     <UI>
-      <Window name="key-editor" visible="0" x-off="63" y-off="51" x-size="559" y-size="485"/>
-      <Window name="session-options-editor" visible="0" x-off="0" y-off="303" x-size="734" y-size="353"/>
+      <Window name="key-editor" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
+      <Window name="session-options-editor" visible="0" x-off="0" y-off="300" x-size="733" y-size="353"/>
       <Window name="speaker-config" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
-      <Window name="about" visible="0" x-off="0" y-off="0" x-size="424" y-size="593"/>
-      <Window name="add-routes" visible="0" x-off="-1" y-off="-1" x-size="649" y-size="496"/>
+      <Window name="about" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
+      <Window name="add-routes" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
       <Window name="add-video" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
-      <Window name="inspector" visible="0" x-off="0" y-off="65" x-size="620" y-size="578"/>
-      <Window name="audio-midi-setup" visible="0" x-off="666" y-off="339" x-size="588" y-size="402"/>
+      <Window name="inspector" visible="0" x-off="338" y-off="77" x-size="620" y-size="370"/>
+      <Window name="audio-midi-setup" visible="0" x-off="694" y-off="339" x-size="532" y-size="402"/>
       <Window name="video-export" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
-      <Window name="script-manager" visible="0" x-off="1602" y-off="24" x-size="318" y-size="353"/>
+      <Window name="script-manager" visible="0" x-off="896" y-off="380" x-size="317" y-size="352"/>
       <Window name="bundle-manager" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
-      <Window name="locations" visible="0" x-off="263" y-off="32" x-size="772" y-size="470"/>
+      <Window name="locations" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
       <Window name="big-clock" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
-      <Window name="audio-connection-manager" visible="0" x-off="692" y-off="303" x-size="650" y-size="594"/>
-      <Window name="midi-connection-manager" visible="0" x-off="796" y-off="424" x-size="621" y-size="609"/>
+      <Window name="audio-connection-manager" visible="0" x-off="396" y-off="0" x-size="504" y-size="594"/>
+      <Window name="midi-connection-manager" visible="0" x-off="467" y-off="122" x-size="362" y-size="281"/>
       <Window name="idle-o-meter" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
       <Window name="RPM-54" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
       <Window name="RPM-156" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
@@ -1341,6 +1359,14 @@
       <Window name="PM-84-" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
       <Window name="PM-86-" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
       <Window name="PM-87-" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
+      <Window name="P-1222-1253" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1" custom-ui="1"/>
+      <Window name="P-1222-1254" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1" custom-ui="1"/>
+      <Window name="P-1222-1252" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1" custom-ui="1"/>
+      <Window name="P-1222-1255" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1" custom-ui="1"/>
+      <Window name="PM-1253-" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
+      <Window name="PM-1254-" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
+      <Window name="PM-1252-" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
+      <Window name="PM-1255-" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
       <Window name="P-156-187" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1" custom-ui="1"/>
       <Window name="P-156-186" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1" custom-ui="1"/>
       <Window name="P-156-16102" visible="0" x-off="0" y-off="13" x-size="806" y-size="333" custom-ui="1"/>
@@ -1393,14 +1419,6 @@
       <Window name="PM-16144-" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
       <Window name="PM-1194-" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
       <Window name="PM-1193-" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
-      <Window name="P-1222-1253" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1" custom-ui="1"/>
-      <Window name="P-1222-1254" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1" custom-ui="1"/>
-      <Window name="P-1222-1252" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1" custom-ui="1"/>
-      <Window name="P-1222-1255" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1" custom-ui="1"/>
-      <Window name="PM-1253-" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
-      <Window name="PM-1254-" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
-      <Window name="PM-1252-" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
-      <Window name="PM-1255-" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1"/>
       <Window name="P-1283-1314" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1" custom-ui="1"/>
       <Window name="P-1283-1313" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1" custom-ui="1"/>
       <Window name="P-1283-1316" visible="0" x-off="-1" y-off="-1" x-size="-1" y-size="-1" custom-ui="1"/>
