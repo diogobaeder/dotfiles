@@ -45,6 +45,10 @@ export KUBECONFIG=~/yougov/kubernetes/client/config
 export VELOCIRAPTOR_URL=https://deploy.yougov.net/
 export VELOCIRAPTOR_AUTH_DOMAIN=deploy.yougov.net
 
+export FBTOKEN=$(keyring get fogbugz diogo.baeder)
+export FBUSER=diogo.baeder@yougov.com
+export FBURL=https://yougov.manuscript.com/
+
 #export MONGO_HOME=$HOME/Downloads/mongodb-linux-x86_64-3.0.6/bin/
 export MONGO_HOME=$HOME/Downloads/mongodb-linux-x86_64-3.4.10/bin/
 #export MONGO_HOME=$HOME/Downloads/mongodb-linux-x86_64-3.6.1/bin/
