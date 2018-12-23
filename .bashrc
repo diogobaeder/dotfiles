@@ -58,13 +58,6 @@ export MONGO_HOME=$HOME/Downloads/mongodb-linux-x86_64-3.4.10/bin/
 . fabric_autocomplete
 . kubectl-completion
 
-mirror-repo() {
-    tmpdir=$(mktemp -d ./repo-XXXXXX)
-    git clone --mirror kiln://$1 $tmpdir
-    git -C $tmpdir push --mirror gitlab://${2:-$1}.git
-    rm -Rf $tmpdir
-}
-
 kns () {
     if [[ $# -eq 0 ]]
     then
