@@ -54,6 +54,9 @@ export MONGO_HOME=$HOME/Downloads/mongodb-linux-x86_64-3.4.10/bin/
 #export MONGO_HOME=$HOME/Downloads/mongodb-linux-x86_64-3.6.1/bin/
 #export MONGO_DIR=/run/diogobaeder/mongo_bix2ui
 
+export INSTACLEAN_CLIENT_ID=a9abacba3a354009892ddd098bdc2a2e
+export INSTACLEAN_CLIENT_SECRET=$(keyring get instaclean a9abacba3a354009892ddd098bdc2a2e)
+
 . paver_autocomplete
 . fabric_autocomplete
 . kubectl-completion
