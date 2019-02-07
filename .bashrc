@@ -33,6 +33,11 @@ if [ -f /usr/bin/virtualenvwrapper.sh ]; then
 	source /usr/bin/virtualenvwrapper.sh
 fi
 
+# NVM
+if [ -f /usr/share/nvm/init-nvm.sh ]; then
+    source /usr/share/nvm/init-nvm.sh
+fi
+
 export EDITOR=vim
 export GOROOT=/usr/lib/go
 export GOPATH=$HOME/go
@@ -69,6 +74,11 @@ kns () {
         kubectl config set-context $(kubectl config current-context) --namespace $@
     fi
 }
+kevents ()
+{
+    kubectl get events --sort-by=.lastTimestamp -ocustom-columns=LAST_TS:.lastTimestamp,NAME:.metadata.name,MSG:.message $* | grep --color=auto -v 'Search Line limits were exceeded'
+}
+
 alias kc='kubectl config get-contexts'
 alias ksc='kubectl config use-context'
 alias kedit-secret="kubectl edit secret"
