@@ -62,6 +62,8 @@ export MONGO_HOME=$HOME/Downloads/mongodb-linux-x86_64-3.4.10/bin/
 export INSTACLEAN_CLIENT_ID=a9abacba3a354009892ddd098bdc2a2e
 export INSTACLEAN_CLIENT_SECRET=$(keyring get instaclean a9abacba3a354009892ddd098bdc2a2e)
 
+export BIXMODEL_TEST_DB=postgresql+psycopg2://bixmodel:bixmodel@localhost/bixmodel_test
+
 . paver_autocomplete
 . fabric_autocomplete
 . kubectl-completion
