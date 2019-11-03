@@ -67,7 +67,7 @@ export BIXMODEL_TEST_DB=postgresql+psycopg2://bixmodel:bixmodel@localhost/bixmod
 
 . paver_autocomplete
 . fabric_autocomplete
-. kubectl-completion
+. _kubectl-completion
 
 kns () {
     if [[ $# -eq 0 ]]
