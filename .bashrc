@@ -33,6 +33,11 @@ if [ -f /usr/bin/virtualenvwrapper.sh ]; then
 	source /usr/bin/virtualenvwrapper.sh
 fi
 
+# pipenv
+if [ -f /usr/bin/pipenv ]; then
+	eval "$(/usr/bin/pipenv --completion)"
+fi
+
 # NVM
 if [ -f /usr/share/nvm/init-nvm.sh ]; then
     source /usr/share/nvm/init-nvm.sh
