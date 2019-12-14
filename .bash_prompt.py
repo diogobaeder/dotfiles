@@ -189,7 +189,8 @@ def main():
         stylize(VirtualEnv.status(), Colors.BLUE, light=True, bold=True),
         stylize(Prompt.who(), Colors.YELLOW, dim=True),
         stylize(Prompt.directory(), Colors.CYAN),
-        stylize(Prompt.prompt_end(), Colors.GRAY, light=True)
+        stylize('\n', Colors.GRAY, light=True),
+        stylize(Prompt.prompt_end(), Colors.GRAY, light=True),
     ]
 
     print(create_prompt(parts))
