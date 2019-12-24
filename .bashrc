@@ -37,6 +37,14 @@ fi
 if [ -f /usr/bin/pipenv ]; then
 	eval "$(/usr/bin/pipenv --completion)"
 fi
+# invoke and fabric
+if [ -f /usr/bin/invoke ]; then
+	eval "$(invoke --print-completion-script bash)"
+fi
+if [ -f /usr/bin/fab ]; then
+	eval "$(fab --print-completion-script bash)"
+fi
+
 
 # NVM
 if [ -f /usr/share/nvm/init-nvm.sh ]; then
@@ -71,7 +79,6 @@ export INSTACLEAN_CLIENT_SECRET=$(keyring get instaclean a9abacba3a354009892ddd0
 export BIXMODEL_TEST_DB=postgresql+psycopg2://bixmodel:bixmodel@localhost/bixmodel_test
 
 . paver_autocomplete
-. fabric_autocomplete
 . _kubectl-completion
 
 kns () {
