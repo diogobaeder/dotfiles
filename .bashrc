@@ -60,6 +60,7 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$CARGOPATH/bin
 export SKIP_JVM_TESTS=1
 export KUBE_EDITOR=~/bin/kube-secret-editor.py
 export KUBECONFIG=~/yougov/kubernetes/client/config
+export SOUP_NTLM_AUTH_DEBUG=
 
 export VELOCIRAPTOR_URL=https://deploy.yougov.net/
 export VELOCIRAPTOR_AUTH_DOMAIN=deploy.yougov.net

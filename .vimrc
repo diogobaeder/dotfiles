@@ -87,8 +87,9 @@ set wildmenu
 set hidden
 
 " Plugins
+let g:syntastic_python_python_exec = 'python3'
 let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_server_python_interpreter = '/usr/bin/python2'
+let g:ycm_server_python_interpreter = '/usr/bin/python'
 nnoremap <leader>s :ToggleWorkspace<CR>
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -100,6 +101,7 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Python
+let g:powerline_pycmd="py"
 let g:pymode_rope = 0
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
