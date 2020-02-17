@@ -59,7 +59,7 @@ export GEM_PATH=/home/diogobaeder/.gem/ruby/2.6.0:/usr/lib/ruby/gems/2.6.0:/usr/
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$CARGOPATH/bin
 export SKIP_JVM_TESTS=1
 export KUBE_EDITOR=~/bin/kube-secret-editor.py
-export KUBECONFIG=~/yougov/kubernetes/client/config
+export KUBECONFIG=~/yougov/kubernetes/client/config:~/yougov/kubernetes/client/self
 export SOUP_NTLM_AUTH_DEBUG=
 
 export VELOCIRAPTOR_URL=https://deploy.yougov.net/
