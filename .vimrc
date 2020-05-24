@@ -88,11 +88,7 @@ set hidden
 
 " Plugins
 let g:syntastic_python_python_exec = 'python3'
-let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_server_python_interpreter = '/usr/bin/python'
 nnoremap <leader>s :ToggleWorkspace<CR>
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:rustfmt_autosave = 1
 let g:racer_experimental_completer = 1
 
