@@ -51,6 +51,7 @@ if [ -f /usr/share/nvm/init-nvm.sh ]; then
     source /usr/share/nvm/init-nvm.sh
 fi
 
+export PAGER=most
 export EDITOR=vim
 export GOROOT=/usr/lib/go
 export GOPATH=$HOME/go
