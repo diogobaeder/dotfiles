@@ -57,11 +57,12 @@ export GOROOT=/usr/lib/go
 export GOPATH=$HOME/go
 export CARGOPATH=$HOME/.cargo
 export GEM_PATH=/home/diogobaeder/.gem/ruby/2.6.0:/usr/lib/ruby/gems/2.6.0:/usr/lib/ruby/gems/2.6.0/gems/
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$CARGOPATH/bin
+export PATH=/usr/lib/distcc/bin/:$PATH:$GOROOT/bin:$GOPATH/bin:$CARGOPATH/bin
 export SKIP_JVM_TESTS=1
 export KUBE_EDITOR=~/bin/kube-secret-editor.py
 export KUBECONFIG=~/yougov/kubernetes/client/config:~/yougov/kubernetes/client/self
 export SOUP_NTLM_AUTH_DEBUG=
+export DISTCC_HOSTS="localhost +zeroconf"
 
 export VELOCIRAPTOR_URL=https://deploy.yougov.net/
 export VELOCIRAPTOR_AUTH_DOMAIN=deploy.yougov.net
