@@ -9,6 +9,7 @@ export HISTCONTROL=ignoreboth
 
 export PYTHONHASHSEED=random
 export SITE_PACKAGES=`python -c 'import site; print(site.getsitepackages()[0])'`
+export YG_DEV=1
 #export PYTHONPATH=$SITE_PACKAGES
 
 alias ls='ls --color=auto'
