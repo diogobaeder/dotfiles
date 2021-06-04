@@ -54,9 +54,6 @@
 [includeIf "gitdir:~/yougov/"]
 	path = ~/.gitconfig-yougov
 
-[url "ssh://yougov@yougov.kilnhg.com/Repositories/"]
-	insteadOf = kiln://
-
 [url "git@gitlab.yougov.net:"]
 	insteadOf = gitlab://
 [filter "lfs"]
