@@ -1,0 +1,35 @@
+format = '''$time$git_branch$kubernetes$python$rust$golang$nodejs$username@$hostname$directory
+\$ '''
+
+[time]
+disabled = false
+time_format = '%F %T'
+format = '[\[$time\]]($style) '
+style = 'bold bg:120 fg:black'
+
+[kubernetes]
+disabled = false
+format = '[$symbol$namespace@$context]($style) '
+
+[gcloud]
+disabled = true
+
+[username]
+show_always = true
+format = '[$user]($style)'
+
+[hostname]
+ssh_only = false
+
+[directory]
+truncate_to_repo = false
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+style = 'bold fg:4'
+
+[nodejs]
+format = '[$symbol($version )]($style)'
