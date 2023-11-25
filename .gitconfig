@@ -1,0 +1,76 @@
+[user]
+	name = Diogo Baeder
+	email = diogobaeder@yahoo.com.br
+
+[github]
+	user = diogobaeder
+
+[color]
+	status = auto
+	diff = auto
+	branch = auto
+
+[merge]
+	tool = meld
+
+[alias]
+	pl = pull
+	ps = push
+	st = status
+	ci = commit -am
+	br = branch
+	co = checkout
+	df = diff
+	lg = log -p
+	a = add .
+	up = submodule update --init --recursive
+	ignore = !( [ ! -z `grep "^$GIT_PREFIX$1$" ".gitignore"` ] ) || echo "$GIT_PREFIX$1" >> .gitignore && echo > /dev/null
+	mf = merge --ff-only
+	pf = pull --ff-only
+	patch = diff --no-color --no-prefix --unified=10
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	my-changes = log --graph --pretty=format:'%Cred%h%Creset - %Cgreen(%ci)%C(yellow)%d%Creset %s' --abbrev-commit --author=diogo
+	this-month = "!git log --graph --pretty=format:'%Cred%h%Creset - %Cblue(%ci) %Cgreen(%ai)%C(yellow)%d%Creset %s' --abbrev-commit --author=diogo --date-order --since=`date +%Y-%m-01`"
+	changes-in = diff-tree --no-commit-id --name-only -r
+	td = log --tags --decorate --simplify-by-decoration
+	graphlog = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	authors = "!for branch in `git branch -r | grep -v HEAD`;do echo -e `git show --format='%ai %ar by %an' $branch | head -n 1` $branch; done | sort -r"
+        set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+
+[push]
+	default = current
+	followTags = true
+
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+
+
+[branch "*"]
+	remote = origin
+	merge = refs/heads/*
+
+[core]
+	editor = vim
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[diff]
+	tool = meld
+[difftool]
+	prompt = false
+[difftool "meld"]
+	cmd = meld "$LOCAL" "$REMOTE"
+
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true

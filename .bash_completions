@@ -1,0 +1,31 @@
+#!/bin/bash
+
+. _kubectl-completion
+
+if [ -f ~/bin/poetry-completion.sh ]; then
+	source ~/bin/poetry-completion.sh
+fi
+
+if [ -f ~/bin/tilt-completion.sh ]; then
+	source ~/bin/tilt-completion.sh
+fi
+
+if [ -f ~/bin/timoni-completion.sh ]; then
+	source ~/bin/timoni-completion.sh
+fi
+
+if [ -f /etc/profile.d/google-cloud-cli.sh ]; then
+	source /etc/profile.d/google-cloud-cli.sh
+fi
+
+if [ -f /usr/bin/terraform ]; then
+	complete -C /usr/bin/terraform terraform
+fi
+
+if [ -f /usr/bin/ng ]; then
+	source <(ng completion script)
+fi
+
+if [ -f /usr/bin/linkerd ]; then
+	source <(linkerd completion bash)
+fi

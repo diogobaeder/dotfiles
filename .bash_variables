@@ -1,0 +1,33 @@
+#!/bin/bash
+
+export HISTCONTROL=ignoreboth
+
+# Python
+export PYTHONHASHSEED=random
+export SITE_PACKAGES=`python -c 'import site; print(site.getsitepackages()[0])'`
+
+if [ -f /usr/bin/src-hilite-lesspipe.sh ]; then
+    export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
+    export LESS=' -R '
+fi
+
+if [ -f /usr/bin/ruby ] && [ -d $(ruby -e 'print Gem.user_dir') ]; then
+	export PATH=$(ruby -e 'print Gem.user_dir')/bin:$PATH
+fi
+
+# Virtualenvwrapper
+export WORKON_HOME=~/Envs
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+mkdir -p $WORKON_HOME
+if [ -f /usr/bin/virtualenvwrapper.sh ]; then
+	source /usr/bin/virtualenvwrapper.sh
+fi
+
+export PAGER=most
+export EDITOR=vim
+export GOROOT=/usr/lib/go
+export GOPATH=$HOME/go
+export CARGOPATH=$HOME/.cargo
+export GEM_PATH=/home/diogobaeder/.gem/ruby/2.6.0:/usr/lib/ruby/gems/2.6.0:/usr/lib/ruby/gems/2.6.0/gems/
+export PATH=/usr/lib/distcc/bin/:$HOME/bin:$PATH:$GOPATH/bin:$GOROOT/bin:$CARGOPATH/bin
+export DISTCC_HOSTS="localhost +zeroconf"
