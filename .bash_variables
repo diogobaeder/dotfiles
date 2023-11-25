@@ -11,10 +11,6 @@ if [ -f /usr/bin/src-hilite-lesspipe.sh ]; then
     export LESS=' -R '
 fi
 
-if [ -f /usr/bin/ruby ] && [ -d $(ruby -e 'print Gem.user_dir') ]; then
-	export PATH=$(ruby -e 'print Gem.user_dir')/bin:$PATH
-fi
-
 # Virtualenvwrapper
 export WORKON_HOME=~/Envs
 export VIRTUAL_ENV_DISABLE_PROMPT=1
@@ -28,6 +24,5 @@ export EDITOR=vim
 export GOROOT=/usr/lib/go
 export GOPATH=$HOME/go
 export CARGOPATH=$HOME/.cargo
-export GEM_PATH=/home/diogobaeder/.gem/ruby/2.6.0:/usr/lib/ruby/gems/2.6.0:/usr/lib/ruby/gems/2.6.0/gems/
 export PATH=/usr/lib/distcc/bin/:$HOME/bin:$PATH:$GOPATH/bin:$GOROOT/bin:$CARGOPATH/bin
 export DISTCC_HOSTS="localhost +zeroconf"
