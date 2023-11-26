@@ -1,4 +1,4 @@
-format = '''$time$git_branch$kubernetes$python$rust$golang$nodejs$username@$hostname$directory
+format = '''$time$git_branch$git_status$kubernetes$python$rust$golang$nodejs$username@$hostname$directory
 \$ '''
 
 [time]
