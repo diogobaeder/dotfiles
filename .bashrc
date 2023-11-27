@@ -6,20 +6,20 @@
 [[ $- != *i* ]] && return
 
 # Load other parts
-if [ -f .bash_variables ]; then
-	source .bash_variables
+if [ -f ~/.bash_variables ]; then
+	source ~/.bash_variables
 fi
 
-if [ -f .bash_aliases ]; then
-	source .bash_aliases
+if [ -f ~/.bash_aliases ]; then
+	source ~/.bash_aliases
 fi
 
-if [ -f .bash_functions ]; then
-	source .bash_functions
+if [ -f ~/.bash_functions ]; then
+	source ~/.bash_functions
 fi
 
-if [ -f .bash_completions ]; then
-	source .bash_completions
+if [ -f ~/.bash_completions ]; then
+	source ~/.bash_completions
 fi
 
 # Starship prompt
