@@ -2,6 +2,10 @@
 
 . _kubectl-completion
 
+if [ -f ~/bin/pulumi-completion.sh ]; then
+	source ~/bin/pulumi-completion.sh
+fi
+
 if [ -f ~/bin/poetry-completion.sh ]; then
 	source ~/bin/poetry-completion.sh
 fi
