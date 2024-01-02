@@ -1,5 +1,6 @@
 format = '''$time$git_branch$git_status$kubernetes$python$rust$golang$nodejs$username@$hostname$directory
 \$ '''
+scan_timeout = 1000
 
 [time]
 disabled = false
