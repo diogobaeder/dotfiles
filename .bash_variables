@@ -26,3 +26,4 @@ export GOPATH=$HOME/go
 export CARGOPATH=$HOME/.cargo
 export PATH=/usr/lib/distcc/bin/:$HOME/bin:$PATH:$GOPATH/bin:$GOROOT/bin:$CARGOPATH/bin
 export DISTCC_HOSTS="localhost +zeroconf"
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
