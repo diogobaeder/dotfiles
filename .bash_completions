@@ -2,6 +2,10 @@
 
 . _kubectl-completion
 
+if [ -f ~/bin/keyring-completion.sh ]; then
+	source ~/bin/keyring-completion.sh
+fi
+
 if [ -f ~/bin/pulumi-completion.sh ]; then
 	source ~/bin/pulumi-completion.sh
 fi
