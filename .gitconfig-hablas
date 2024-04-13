@@ -2,3 +2,9 @@
 name = Diogo Baeder
 email = diogo.baeder@hablas.io
 signingkey = 026027FFB8E9489A
+
+[gitlab]
+user = diogo.baeder
+
+[core]
+sshCommand = ssh -i ~/.ssh/id_ed25519
