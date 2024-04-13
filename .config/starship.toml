@@ -1,5 +1,5 @@
-format = '''$time$git_branch$git_status$kubernetes$python$rust$golang$nodejs$username@$hostname$directory
-$cmd_duration\$ '''
+format = '''$cmd_duration$time$git_branch$git_status$kubernetes$python$rust$golang$nodejs$username@$hostname$directory
+\$ '''
 scan_timeout = 1000
 
 [time]
@@ -39,5 +39,7 @@ format = '[$symbol($version )]($style)'
 [cmd_duration]
 min_time = 0
 min_time_to_notify = 10_000
-format = 'took [$duration]($style) '
+format = '''
+took [$duration]($style)
+'''
 show_notifications = true
